@@ -2,27 +2,14 @@
 <html>
 <head>
   <title>日数</title>
-  <style>
-    #result {
-      font-size: 500px;
-      margin-top: 0;
-      text-align: center;
-    }
-  </style>
 </head>
 <body>
-  <p id="result"></p>
-
+  <p id="result" style="font-size: 500px; margin-top: 0; text-align: center;"></p>
   <script>
-    // 2002年2月10日のタイムスタンプを取得
     const startDate = new Date('2002-02-10T00:00:00+09:00');
     const today = new Date();
-
-    // 日数を計算
     const timeDiff = today.getTime() - startDate.getTime();
     const daysPassed = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
-
-    // 結果を表示
     document.getElementById('result').textContent = daysPassed;
   </script>
 </body>
