@@ -1,13 +1,49 @@
 <!DOCTYPE html>
-<html>
+<html lang="ja">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>日数</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+    }
+
+    h1 {
+      font-size: 10vw;  /* ビューポート幅の10% */
+      text-align: center;
+      margin: 20px 0;
+    }
+
+    p {
+      font-size: 30vw;  /* ビューポート幅の30% */
+      margin-top: 0;
+      text-align: center;
+      margin-right: 20px;
+    }
+
+    /* さらに小さい画面に対応するための最小文字サイズ */
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 15vw;  /* ビューポート幅の15% */
+      }
+
+      p {
+        font-size: 40vw;  /* ビューポート幅の40% */
+        text-align: center;
+        margin-right: 0;
+      }
+    }
+  </style>
 </head>
 <body>
-  <h1 style="font-size: 50px;">オ〇禁日数</h1>
-  <p id="result1" style="font-size: 500px; margin-top: 0; text-align: center;"></p>
-  <h1 style="font-size: 50px;">夢〇禁日数</h1>
-  <p id="result2" style="font-size: 500px; margin-top: 0; text-align: center;"></p>
+  <h1>オ〇禁日数</h1>
+  <p id="result1"></p>
+  <h1>夢〇禁日数</h1>
+  <p id="result2"></p>
 
   <script>
     const jsonUrl = 'https://shiono-desu.github.io/days/data.json';
@@ -20,12 +56,13 @@
         // オ〇禁日数の計算
         const startDate1 = new Date(data.startDate1);
         const timeDiff1 = today.getTime() - startDate1.getTime();
-        const daysPassed1 = Math.floor(timeDiff1 / (1000 * 60 * 60 * 24));
+        const daysPassed1 = Math.floor(timeDiff1 / (1000 * 60 * 60 * 24)).toLocaleString();
         document.getElementById('result1').textContent = daysPassed1;
+
         // 夢〇禁日数の計算
         const startDate2 = new Date(data.startDate2);
         const timeDiff2 = today.getTime() - startDate2.getTime();
-        const daysPassed2 = Math.floor(timeDiff2 / (1000 * 60 * 60 * 24));
+        const daysPassed2 = Math.floor(timeDiff2 / (1000 * 60 * 60 * 24)).toLocaleString();
         document.getElementById('result2').textContent = daysPassed2;
       })
   </script>
