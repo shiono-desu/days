@@ -22,6 +22,7 @@
       .then(response => response.json())
       .then(data => {
         const today = new Date();
+        
         // オ〇禁日数の計算
         const startDate1 = new Date(data.startDate1);
         const timeDiff1 = today.getTime() - startDate1.getTime();
