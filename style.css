@@ -1,0 +1,39 @@
+body {
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+}
+
+.display {
+  margin: 0;
+  padding: 3vw 0 5vw 0;
+  width: 100%;
+}
+
+.title {
+  font-size: 10vw;  /* ビューポート幅の10% */
+  font-weight: bold;
+  text-align: center;
+  margin: 0;
+}
+
+.result {
+  font-size: 30vw;  /* ビューポート幅の30% */
+  line-height: 30vw;
+  margin: 0;
+  text-align: center;
+}
+
+/* さらに小さい画面に対応するための最小文字サイズ */
+@media (max-width: 600px) {
+  h1 {
+    font-size: 15vw;  /* ビューポート幅の15% */
+  }
+
+  .result {
+    font-size: 40vw;  /* ビューポート幅の40% */
+    text-align: center;
+    margin-right: 0;
+  }
+}
