@@ -56,13 +56,13 @@
         // オ〇禁日数の計算
         const startDate1 = new Date(data.startDate1);
         const timeDiff1 = today.getTime() - startDate1.getTime();
-        const daysPassed1 = Math.floor(timeDiff1 / (1000 * 60 * 60 * 24)).toLocaleString();
+        const daysPassed1 = Math.floor(timeDiff1 / (1000 * 60 * 60 * 24));
         document.getElementById('result1').textContent = daysPassed1;
 
         // 夢〇禁日数の計算
         const startDate2 = new Date(data.startDate2);
         const timeDiff2 = today.getTime() - startDate2.getTime();
-        const daysPassed2 = Math.floor(timeDiff2 / (1000 * 60 * 60 * 24)).toLocaleString();
+        const daysPassed2 = Math.floor(timeDiff2 / (1000 * 60 * 60 * 24));
         document.getElementById('result2').textContent = daysPassed2;
       })
   </script>
